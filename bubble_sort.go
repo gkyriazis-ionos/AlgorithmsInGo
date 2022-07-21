@@ -21,10 +21,12 @@ func BubbleSortString(list []string) {
 }
 
 type Person struct {
+	age       int
 	firstName string
 	lastName  string
-	age       int
 }
+
+type PersonList []Person
 
 // BubbleSortPerson uses bubble sort to sort Person slices by: Age, then
 // LastName, then FirstName. Try implementing it for practice.
@@ -41,4 +43,33 @@ func BubbleSort(list sort.Interface) {
 			}
 		}
 	}
+}
+
+func (people PersonList) Less(i, j int) bool {
+	if people[i].age < people[j].age {
+		return true
+	} else if people[i].age > people[j].age {
+		return false
+	} else {
+		if people[i].lastName < people[j].lastName {
+			return true
+		} else if people[i].lastName > people[j].lastName {
+			return false
+		} else {
+			if people[i].firstName < people[j].firstName {
+				return true
+			} else if people[i].firstName > people[j].firstName {
+				return false
+			}
+		}
+	}
+	return false
+}
+
+func (people PersonList) Swap(i, j int) {
+	people[i], people[j] = people[j], people[i]
+}
+
+func (people PersonList) Len() int {
+	return len(people)
 }

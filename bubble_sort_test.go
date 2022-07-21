@@ -2,6 +2,7 @@ package AlgorithmsWithGo
 
 import (
 	"AlgorithmsWithGo/sorttest"
+
 	"fmt"
 	"math/rand"
 	"testing"
@@ -38,4 +39,8 @@ func TestBubbleSortString(t *testing.T) {
 
 func TestBubbleSortInterface(t *testing.T) {
 	sorttest.TestInterface(t, BubbleSort)
+}
+
+func TestPerson(t *testing.T) {
+	testPeople(t, BubbleSort)
 }
