@@ -24,13 +24,23 @@ package AlgorithmsWithGo
 //   Fibonacci(7) => 13
 //   Fibonacci(14) => 377
 //
-func Fibonacci(n int) int {
-	if n == 0 {
-		return 0
-	} else if n == 1 {
-		return 1
-	} else {
-		return Fibonacci(n-1) + Fibonacci(n-2)
-	}
 
+// Use a helper function so that we can pass in an initialized map.
+func Fibonacci(N int) int {
+	cache := make(map[int]int)
+	cache[0] = 0
+	cache[1] = 1
+	return helper(N, cache)
+}
+
+// This helper function does all the heavy lifting. If our desired fib number
+// isn't in the cache, then calculate it first and store it in the cache before
+// returning the answer.
+func helper(N int, Cache map[int]int) int {
+	i, ok := Cache[N]
+	if ok {
+		return i
+	}
+	Cache[N] = helper(N-1, Cache) + helper(N-2, Cache)
+	return Cache[N]
 }
