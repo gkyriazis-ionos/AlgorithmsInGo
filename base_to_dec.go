@@ -1,5 +1,8 @@
 package AlgorithmsWithGo
 
+// Takes a number as string(value) and transposes it
+// to the base given(base)
+
 import (
 	"math"
 	"strconv"

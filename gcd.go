@@ -1,5 +1,7 @@
 package AlgorithmsWithGo
 
+// Calculates recursively the Greater Common Divisor of a number according to the Euclidean Algorithm
+
 func GCD(a, b int) int {
 	if b == 0 {
 		return a

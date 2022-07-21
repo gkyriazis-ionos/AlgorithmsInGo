@@ -4,6 +4,8 @@ import (
 	"strings"
 )
 
+// reverses a given string
+
 func Reverse(word string) string {
 	// should I also code the Split word function??
 	chars := strings.Split(word, "")

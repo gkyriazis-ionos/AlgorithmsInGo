@@ -1,5 +1,7 @@
 package AlgorithmsWithGo
 
+// Breaks a number into different prime factors
+
 func Factor(primes []int, number int) []int {
 	var res []int
 	for _, prime := range primes {

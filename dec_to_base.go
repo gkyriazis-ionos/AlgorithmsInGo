@@ -4,6 +4,8 @@ import (
 	"strconv"
 )
 
+// Transposes a number in decimal(dec) to any base required
+
 func DecToBase(dec, base int) string {
 	output := ""
 	for dec != 0 {
