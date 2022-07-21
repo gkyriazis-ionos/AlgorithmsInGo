@@ -26,21 +26,21 @@ package AlgorithmsWithGo
 //
 
 // Use a helper function so that we can pass in an initialized map.
-func Fibonacci(N int) int {
+func Fibonacci(n int) int {
 	cache := make(map[int]int)
 	cache[0] = 0
 	cache[1] = 1
-	return helper(N, cache)
+	return helper(n, cache)
 }
 
 // This helper function does all the heavy lifting. If our desired fib number
 // isn't in the cache, then calculate it first and store it in the cache before
 // returning the answer.
-func helper(N int, Cache map[int]int) int {
-	i, ok := Cache[N]
+func helper(n int, cache map[int]int) int {
+	i, ok := cache[n]
 	if ok {
 		return i
 	}
-	Cache[N] = helper(N-1, Cache) + helper(N-2, Cache)
-	return Cache[N]
+	cache[n] = helper(n-1, cache) + helper(n-2, cache)
+	return cache[n]
 }
