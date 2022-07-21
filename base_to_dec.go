@@ -1,14 +1,13 @@
 package AlgorithmsWithGo
 
-// Takes a number as string(value) and transposes it
-// to the base given(base)
-
 import (
 	"math"
 	"strconv"
 	"strings"
 )
 
+// BaseToDec: takes a number as string(value) and transposes it
+// to the base given(base)
 func BaseToDec(value string, base int) int {
 	power := 0
 	num := 0

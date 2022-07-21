@@ -20,3 +20,7 @@ func TestInsertionSortString(t *testing.T) {
 func TestInsertionSortInterface(t *testing.T) {
 	sorttest.TestInterface(t, InsertionSort)
 }
+
+func TestPersonInsertion(t *testing.T) {
+	testPeople(t, InsertionSort)
+}
